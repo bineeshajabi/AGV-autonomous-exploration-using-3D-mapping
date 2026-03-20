@@ -97,3 +97,9 @@ Drive manually with teleop for the first few seconds to give RTAB-Map enough ini
 
 <img width="1284" height="765" alt="Screenshot from 2026-03-18 12-46-07" src="https://github.com/user-attachments/assets/e103ff42-eebf-4fdb-a5fc-a6173781f296" />
 
+<img width="810" height="619" alt="Screenshot from 2026-03-19 17-10-42" src="https://github.com/user-attachments/assets/cb7435d5-ac16-4204-b339-ceba8deb7297" />
+
+<img width="1286" height="725" alt="Screenshot from 2026-03-19 17-11-36" src="https://github.com/user-attachments/assets/7030ae21-84ec-42c4-af95-d9ca59fec0f0" />
+
+
+
