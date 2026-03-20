@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot name="turtlebot3_waffle" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+
+  <!-- Include Xacro files -->
+  <xacro:include filename="$(find tb3_waffle_description)/urdf/module/turtlebot3_waffle.urdf.xacro" />
+ 
+   <!-- Include Gazebo Xacro files -->
+  <xacro:include filename="$(find tb3_waffle_description)/urdf/gz_modules/gz_diff.xacro" />
+
+  <xacro:include filename="$(find tb3_waffle_description)/urdf/gz_modules/sensors.urdf.xacro" />
+
+</robot>
