@@ -10,7 +10,6 @@ Built as part of working toward autonomous warehouse exploration — using RTAB-
 
 RTAB-Map builds a 2D occupancy grid in real time as the robot moves. The frontier explorer node reads that map, finds the boundary between explored and unexplored space, and sends the nearest unexplored region as a Nav2 goal. When the robot reaches it, the map grows and the process repeats until the space is fully mapped.
 
-Without this, you'd have to manually send every goal with RViz. This replaces that with autonomous decision making.
 
 ---
 
@@ -31,7 +30,6 @@ The node:
 5. Sends it to Nav2's `navigate_to_pose` action server
 6. Waits for the result, then picks the next frontier
 
-The timer runs every 3 seconds so the map callback isn't constantly sending new goals while the robot is still moving.
 
 ---
 
@@ -49,35 +47,6 @@ frontier_explorer_node  —  reads map, picks next goal
 Nav2  —  drives robot to goal, avoids obstacles
     ↓
 loop until fully mapped
-```
-
----
-
-## RTAB-Map parameters used
-
-| Parameter | Value | Why |
-|-----------|-------|-----|
-| `Reg/Strategy` | `1` | ICP registration — works better than visual in repetitive warehouse aisles |
-| `Grid/Sensor` | `2` | Fuse both LIDAR and depth camera for obstacle detection |
-| `Grid/3D` | `false` | 2D occupancy grid — Nav2 doesn't need 3D |
-| `Grid/MaxGroundHeight` | `0.05` | Ignore floor, flag anything above 5cm as obstacle |
-| `Grid/MaxObstacleHeight` | `0.4` | Ignore ceiling returns |
-| `Grid/RangeMin` | `0.2` | Filter out scan returns from the robot body itself |
-| `Reg/Force3DoF` | `true` | Ground robot, constrain to 2D plane |
-
----
-
-## Package structure
-
-```
-frontier_explorer/
-├── frontier_explorer/
-│   └── frontier_explorer_node.py
-├── launch/
-│   └── explore.launch.py
-├── package.xml
-├── setup.py
-└── setup.cfg
 ```
 
 ---
@@ -121,7 +90,6 @@ Drive manually with teleop for the first few seconds to give RTAB-Map enough ini
 ## What I learned building this
 
 - How RTAB-Map builds a map — loop closure, graph optimization, what breaks in featureless environments
-- Why ICP registration works better than visual in repetitive spaces
 - How the occupancy grid is structured and how to read it in a ROS2 node
 - BFS for clustering connected cells
 - Nav2 action server interface — same pattern as Task 7 waypoint navigation but driven programmatically
