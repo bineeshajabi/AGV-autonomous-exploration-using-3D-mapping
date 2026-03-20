@@ -94,3 +94,6 @@ Drive manually with teleop for the first few seconds to give RTAB-Map enough ini
 - BFS for clustering connected cells
 - Nav2 action server interface — same pattern as Task 7 waypoint navigation but driven programmatically
 - QoS mismatch between RTAB-Map (`TRANSIENT_LOCAL`) and default subscribers (`VOLATILE`) — cost a few hours of debugging
+
+<img width="1284" height="765" alt="Screenshot from 2026-03-18 12-46-07" src="https://github.com/user-attachments/assets/e103ff42-eebf-4fdb-a5fc-a6173781f296" />
+
