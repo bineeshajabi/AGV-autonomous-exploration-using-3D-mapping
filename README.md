@@ -60,7 +60,7 @@ ros2 launch world_display house_bot.launch.py
 
 **Terminal 2 — RTAB-Map**
 ```bash
-ros2 launch obstacle_3d_world agv_rtab_map.launch.py
+ros2 launch obstacle_3d_world tb_rtab_map.launch.py
 ```
 
 **Terminal 3 — Nav2**
